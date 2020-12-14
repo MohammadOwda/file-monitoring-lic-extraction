@@ -23,7 +23,7 @@ class Handler(FileSystemEventHandler):
             #postReq.sendPlate(self, data)
     
 
-folderToWatch = 'C:\\Users\\moham\\Desktop\\watchdog\\'
+folderToWatch = '.'
 observer = Observer()
 event_handler = Handler()
 observer.schedule(event_handler, folderToWatch, recursive=True)
