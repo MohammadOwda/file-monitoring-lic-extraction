@@ -10,11 +10,11 @@ def getPlateNumber(imgIn):
     print(imgIn)
     image1 = cv2.imread(imgIn) 
     
-    cv2.imshow('car', image1)          
+    #cv2.imshow('car', image1)          
 
     img = cv2.cvtColor(image1, cv2.COLOR_RGB2GRAY) 
     
-    cv2.imshow('car', img)          
+    #cv2.imshow('car', img)          
 
     ret, thresh1 = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)      
 
@@ -53,7 +53,7 @@ def getPlateNumber(imgIn):
     print("License Plate: ",LIC_NUM)
 
 
-    cv2.imshow('License Plate Detection', license_plate)          
+    #cv2.imshow('License Plate Detection', license_plate)          
     return LIC_NUM
 
     # De-allocate any associated memory usage          
