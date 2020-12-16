@@ -1,9 +1,11 @@
 import sys
+import sys
 import os
 import time
 import logging
 import LPD
 import postReq
+import shutil
 from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -21,9 +23,12 @@ class Handler(FileSystemEventHandler):
                 'current_time': current_time
             }
             #postReq.sendPlate(self, data)
+            shutil.move(name,storageFolder+img)
+
     
 
-folderToWatch = '.'
+folderToWatch = '.\\pics\\'
+storageFolder = '.\\storage\\'
 observer = Observer()
 event_handler = Handler()
 observer.schedule(event_handler, folderToWatch, recursive=True)
@@ -34,6 +39,7 @@ try:
 except KeyboardInterrupt:
     observer.stop()
 observer.join()
+
 
 
 
